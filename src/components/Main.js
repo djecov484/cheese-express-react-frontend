@@ -7,7 +7,7 @@ import Show from "../pages/Show"
 function Main(props){
     const [cheese, setCheese] = useState(null)
 
-    const URL = "http://localhost:4000/cheese/"
+    const URL = "https://hidden-earth-90438.herokuapp.com/cheese"
 
     const getCheese = async () => {
         const response = await fetch(URL)
