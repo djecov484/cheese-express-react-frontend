@@ -7,7 +7,7 @@ import Show from "../pages/Show"
 function Main(props){
     const [cheese, setCheese] = useState(null)
 
-    const URL = "https://hidden-earth-90438.herokuapp.com/cheese"
+    const URL = "https://hidden-earth-90438.herokuapp.com/cheese/"
 
     const getCheese = async () => {
         const response = await fetch(URL)
@@ -52,17 +52,17 @@ function Main(props){
         <main>
           <Switch>
             <Route exact path="/">
-              <Index people={cheese} 
-              createPeople={createCheese} />
+              <Index cheese={cheese} 
+              createCheese={createCheese} />
             </Route>
             <Route
-              path="/people/:id"
+              path="/cheese/:id"
               render={(rp) => (
                 <Show
                   {...rp}
-                  people={cheese}
-                  updatePeople={updateCheese}
-                  deletePeople={deleteCheese}
+                  cheese={cheese}
+                  updateCheese={updateCheese}
+                  deleteCheese={deleteCheese}
                 />
               )}
             />

@@ -7,11 +7,11 @@ function Show(props){
   
   const cheese = props.cheese
  
-  const Cheese = cheese.find((singleCheese) => {
+  const cheeseIt = cheese.find((singleCheese) => {
     return singleCheese._id === id
   })
 
-  const[editForm, setEditForm] = useState(cheese)
+  const[editForm, setEditForm] = useState(cheeseIt)
 
   const handleChange = event => {
     setEditForm({...editForm, [event.target.name]: event.target.value})
@@ -19,19 +19,19 @@ function Show(props){
 
   const handleSubmit = event => {
     event.preventDefault()
-    props.udateCheese(editForm, cheese._id)
+    props.updateCheese(editForm, cheeseIt._id)
     props.history.push("/")
   }
 
   const removeCheese = () => {
-    props.deleteCheese(cheese._id)
+    props.deleteCheese(cheeseIt._id)
     props.history.push("/")
   }
 
   return <div className="cheese">
-    <h1>{cheese.name}</h1>
-    <h2>{cheese.title}</h2>
-    <img src={cheese.image} alt={cheese.name}/>
+    <h1>{cheeseIt.name}</h1>
+    <h2>{cheeseIt.title}</h2>
+    <img src={cheeseIt.image} alt={cheeseIt.name}/>
     <button onClick={removeCheese} id="delete">
         DELETE
       </button>
