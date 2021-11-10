@@ -46,16 +46,16 @@ function Show(props){
         />
         <input
           type="text"
-          value={editForm.image}
-          name="image"
-          placeholder="image URL"
+          value={editForm.countryOfOrigin}
+          name="countryOfOrigin"
+          placeholder="countryOfOrigin"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={editForm.countryOfOrigin}
-          name="countryOfOrigin"
-          placeholder="countryOfOrigin"
+          value={editForm.image}
+          name="image"
+          placeholder="image URL"
           onChange={handleChange}
         />
         <input type="submit" value="Update Cheese" />
